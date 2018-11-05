@@ -94,22 +94,22 @@ sudo ./bridge.sh destroy-all
 bridge0 32768.02:ff:00:00:07:0a desig root 32768.02:00:90:00:08:0b cost 2000
   epair0a  proto rstp  id 128.7   cost   2000:       root / forwarding
   epair1a  proto rstp  id 128.9   cost   2000:  alternate / discarding
-  epair2a  proto rstp  id 128.11  cost   2000:   disabled / discarding
+  epair2a  proto rstp  id 128.11  cost   2000:  alternate / discarding
 
 bridge1 32768.02:00:90:00:08:0b [root]
   epair0b  proto rstp  id 128.8   cost   2000: designated / forwarding
   epair3a  proto rstp  id 128.13  cost   2000: designated / forwarding
-  epair4a  proto rstp  id 128.15  cost   2000:   disabled / discarding
+  epair4a  proto rstp  id 128.15  cost   2000: designated / forwarding
 
 bridge2 32768.02:00:90:00:0a:0b desig root 32768.02:00:90:00:08:0b cost 2000
   epair1b  proto rstp  id 128.10  cost   2000: designated / forwarding
   epair3b  proto rstp  id 128.14  cost   2000:       root / forwarding
-  epair5a  proto rstp  id 128.17  cost   2000:   disabled / discarding
+  epair5a  proto rstp  id 128.17  cost   2000: designated / forwarding
 
-bridge3 32768.02:00:90:00:0c:0b [root]
+bridge3 32768.02:00:90:00:0c:0b desig root 32768.02:00:90:00:08:0b cost 2000
   epair2b  proto rstp  id 128.12  cost   2000: designated / forwarding
-  epair4b  proto rstp  id 128.16  cost   2000: designated / forwarding
-  epair5b  proto rstp  id 128.18  cost   2000:   disabled / discarding
+  epair4b  proto rstp  id 128.16  cost   2000:       root / forwarding
+  epair5b  proto rstp  id 128.18  cost   2000:  alternate / discarding
 ```
 
 ### Visualization Web Application
@@ -124,4 +124,4 @@ http://localhost:3000/index.html
 ```
 
 3. Bridge topology is displayed in realtime.
-[Visualizing STP bridges](https://genneko.github.io/images/learning-stp/rstp-4b-mesh-01.jpg)
+![Visualizing STP bridges](https://genneko.github.io/images/learning-stp/rstp-4b-mesh-01.jpg)
